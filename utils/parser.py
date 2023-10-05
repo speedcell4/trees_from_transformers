@@ -15,12 +15,12 @@ def not_coo_parser(score, sent):
         if l_len > 0 and r_len > 0:
             l_tree = not_coo_parser(score[:idx_max], sent[:idx_max + 1])
             r_tree = not_coo_parser(score[idx_max + 2:], sent[idx_max + 2:])
-            r_tree = f'(T (T {sent[idx_max +1]} ) {r_tree} )'
+            r_tree = f'(T (T {sent[idx_max + 1]} ) {r_tree} )'
             parse_tree = f'(T {l_tree} {r_tree} )'
         else:
             if l_len == 0:
                 r_tree = not_coo_parser(score[idx_max + 2:], sent[idx_max + 2:])
-                r_tree = f'(T (T {sent[idx_max +1]} ) {r_tree} )'
+                r_tree = f'(T (T {sent[idx_max + 1]} ) {r_tree} )'
                 parse_tree = r_tree
             else:
                 l_tree = not_coo_parser(score[:idx_max], sent[:idx_max + 1])

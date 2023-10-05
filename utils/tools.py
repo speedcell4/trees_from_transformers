@@ -1,5 +1,5 @@
-import logging
 import random
+
 import torch
 
 specials = {'bert': '#', 'gpt2': 'Ġ', 'xlnet': '▁', 'roberta': 'Ġ'}

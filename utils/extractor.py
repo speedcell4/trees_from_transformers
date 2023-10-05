@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
 class Extractor(nn.Module):
     def __init__(self, n_hidden):
         super(Extractor, self).__init__()
@@ -20,6 +21,6 @@ class Extractor(nn.Module):
         gold = d.new_tensor(gold)
         l = 0
         for i in range(len(d)):
-            for j in range(i+1, len(d)):
-                l += F.relu(1 - torch.sign(gold[i]- gold[j]) * (d[i] - d[j]))
+            for j in range(i + 1, len(d)):
+                l += F.relu(1 - torch.sign(gold[i] - gold[j]) * (d[i] - d[j]))
         return l

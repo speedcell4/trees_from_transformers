@@ -3,16 +3,20 @@ import datetime
 import logging
 import os
 import pickle
-from tqdm import tqdm
 
 import torch
+from tqdm import tqdm
 from transformers import *
 
 from data.dataset import Dataset
 from utils.measure import Measure
-from utils.parser import not_coo_parser, parser
-from utils.tools import set_seed, select_indices, group_indices
-from utils.yk import get_actions, get_nonbinary_spans
+from utils.parser import not_coo_parser
+from utils.parser import parser
+from utils.tools import group_indices
+from utils.tools import select_indices
+from utils.tools import set_seed
+from utils.yk import get_actions
+from utils.yk import get_nonbinary_spans
 
 MODELS = [(BertModel, BertTokenizer, BertConfig, 'bert-base-cased'),
           (BertModel, BertTokenizer, BertConfig, 'bert-large-cased'),

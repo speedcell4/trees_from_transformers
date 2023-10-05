@@ -1,4 +1,6 @@
-from utils.yk import get_actions, get_nonbinary_spans, get_tags_tokens_lowercase
+from utils.yk import get_actions
+from utils.yk import get_nonbinary_spans
+from utils.yk import get_tags_tokens_lowercase
 
 
 class Dataset(object):
